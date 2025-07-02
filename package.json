@@ -2,7 +2,7 @@
   "name": "ikamthatikam-pages",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sharkparty.github.io/ikamthatikam-pages/",
+  "homepage": "https://sharkparty.github.io/ikamthatikam-pages",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
     "@testing-library/dom": "^10.4.0",
