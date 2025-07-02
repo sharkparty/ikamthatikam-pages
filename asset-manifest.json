@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ikamthatikam-pages/static/css/main.464dd001.css",
-    "main.js": "/ikamthatikam-pages/static/js/main.0f36fa16.js",
+    "main.css": "/ikamthatikam-pages/static/css/main.91b69ded.css",
+    "main.js": "/ikamthatikam-pages/static/js/main.1836c859.js",
     "static/js/453.aac354b4.chunk.js": "/ikamthatikam-pages/static/js/453.aac354b4.chunk.js",
     "index.html": "/ikamthatikam-pages/index.html",
-    "main.464dd001.css.map": "/ikamthatikam-pages/static/css/main.464dd001.css.map",
-    "main.0f36fa16.js.map": "/ikamthatikam-pages/static/js/main.0f36fa16.js.map",
+    "main.91b69ded.css.map": "/ikamthatikam-pages/static/css/main.91b69ded.css.map",
+    "main.1836c859.js.map": "/ikamthatikam-pages/static/js/main.1836c859.js.map",
     "453.aac354b4.chunk.js.map": "/ikamthatikam-pages/static/js/453.aac354b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.464dd001.css",
-    "static/js/main.0f36fa16.js"
+    "static/css/main.91b69ded.css",
+    "static/js/main.1836c859.js"
   ]
 }
