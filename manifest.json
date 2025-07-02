@@ -1,0 +1,15 @@
+{
+  "short_name": "ikamthatikam resume site",
+  "name": "Staff Engineer & Tech Lead with 10+ years experience in AI frameworks, system architecture, and team leadership. Expertise in Node.js, React, Go, AWS, and scalable platform development at Auth0, RetailMeNot, and SailPoint.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
