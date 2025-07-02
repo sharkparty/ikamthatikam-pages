@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "/ikamthatikam-pages",
-  "homepage": "https://sharkparty.github.io/ikamthatikam-pages",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.11",
     "@testing-library/dom": "^10.4.0",
@@ -25,6 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "style": "npx @tailwindcss/cli -i ./src/index.css -o ./src/output.css --watch",
+    "preview": "npx http-server ./build -p 3003",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

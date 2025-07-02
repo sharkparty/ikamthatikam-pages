@@ -17,3 +17,9 @@ code {
 body {
   background: oklch(21% 0.034 264.665);
 }
+
+@media (width >= 48rem) {
+  .foo {
+    grid-column: span 2 / span 2;
+  }
+}

@@ -145,8 +145,15 @@ function App() {
                           </h1>
                           <h2 className="text-xl md:text-2xl text-gray-300 mb-4">Staff Engineer & Tech Lead</h2>
                           <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                              Seasoned engineering leader with 10+ years of experience architecting scalable systems,
-                              leading AI initiatives, and building high-performing teams across enterprise platforms.
+                              I’m a staff engineer and tech lead specializing in building scalable platforms, not just
+                              shipping features. At Auth0, I lead the AI Frameworks & Services team, where I’ve
+                              integrated LLMs into real products, built secure gRPC pipelines with mTLS, and
+                              architected SDKs that plug into our dashboard like they've always belonged.  I modernize,
+                              mentor, and delete more legacy code than most people write. I’ve replatformed monoliths,
+                              modernized infrastructure with Kubernetes and GCP, built design systems, and led
+                              high-performing teams from interns to staff engineers. Whether it’s AI, event-driven
+                              systems, or untangling legacy code, I bring a practical, forward-looking approach—and a
+                              low tolerance for technical debt disguised as “just one more hack.”
                           </p>
                           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
                               <div className="flex items-center gap-2 bg-gray-700 px-3 py-2 rounded-full">
@@ -169,7 +176,7 @@ function App() {
               {/* Main Content */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   {/* Left Column */}
-                  <div className="lg:col-span-2 space-y-8">
+                  <div className="foo space-y-8">
                       {/* Experience Section */}
                       <div className="bg-gray-800 rounded-lg p-6 shadow-xl">
                           <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
@@ -220,7 +227,7 @@ function App() {
                   </div>
 
                   {/* Right Column */}
-                  <div className="space-y-8">
+                  <div className="bar space-y-8">
                       {/* Links Section */}
                       <div className="bg-gray-800 rounded-lg p-6 shadow-xl">
                           <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
