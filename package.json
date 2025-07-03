@@ -25,7 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "style": "npx @tailwindcss/cli -i ./src/index.css -o ./src/output.css --watch",
+    "style": "npx @tailwindcss/cli -i ./src/index.css -o ./public/main.css --watch",
     "preview": "npx http-server ./build -p 3003",
     "eject": "react-scripts eject"
   },
