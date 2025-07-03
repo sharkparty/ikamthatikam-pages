@@ -12,6 +12,16 @@ import {
     Briefcase,
     Megaphone
 } from 'lucide-react';
+import MarkdownToJSX from 'markdown-to-jsx';
+
+type Experience = {
+    title: string;
+    company: string;
+    period: string;
+    description: string;
+    achievements: Array<string>;
+    tags?: Array<string>;
+}
 
 function App() {
     const skills = [
@@ -34,80 +44,256 @@ function App() {
         { name: 'Python', level: 50 },
     ];
 
-    const experiences = [
+    const experiences: Array<Experience> = [
         {
-            title: 'Staff Engineer & Tech Lead - AI Frameworks & Services',
-            company: 'Auth0',
-            period: 'Dec 2023 - Present',
-            description: 'Selected to lead the newly formed AI Frameworks & Services (AIFS) team, spearheading AI integration within Auth0\'s platform ecosystem.',
-            achievements: [
-                'Created MVP architecture enabling AIFS client SDK and services as drop-in tooling within the dashboard',
-                'Designed solutions increasing user conversion rates via RAG-enabled LLM chat experiences',
-                'Implemented organization\'s first bidirectional gRPC communication with mTLS security',
-                'Engineered event-driven architecture leveraging RXJS for rich user experiences',
-                'Led and mentored diverse engineering team from interns to staff level'
+            "title": "Staff Engineer & Tech Lead - AIFS",
+            "company": "Auth0",
+            "period": "December 2023 - Present",
+            "description": "Led the newly formed AI Frameworks & Services (AIFS) team, driving innovation in AI-driven solutions and establishing a platform-centric approach within Auth0. Championed the integration of advanced AI capabilities into core product offerings, significantly enhancing user experience and developer tooling.",
+            "achievements": [
+                "Spearheaded the creation of an **MVP architecture** for AIFS's client SDK and services, transforming them into seamlessly integrated, drop-in tooling within the Auth0 dashboard, shifting from isolated solutions to a cohesive platform.",
+                "Designed and implemented solutions that significantly **increased user conversion rates** by enhancing the discoverability of Auth0's advanced tooling through RAG-enabled Large Language Model (LLM) chat experiences.",
+                "Laid the foundational architecture for future product initiatives, enabling feature-rich **generative AI capabilities** (e.g., tool calling) for sophisticated tenant insights.",
+                "Engineered and implemented the organization's first **bidirectional gRPC communication** (leveraging Protobufs) to facilitate stateful interactions between users, a Node.js gateway, and Python services, all secured with **mTLS** for robust security.",
+                "Developed an **event-driven architecture**, delivering rich user experiences, powerful debugging capabilities, resilient failure/retry logic, and extensive extensibility.",
+                "Maintained rigorous test coverage across projects, even under aggressive deadlines, ensuring a stable and adaptable foundation for evolving product requirements.",
+                "Provided leadership and mentorship to a diverse engineering team (from interns to staff), offering actionable feedback that accelerated individual career growth.",
+                "Transformed Agile practices through a multi-phase evolution, from flexible Kanban to a feature-tracking Agile approach, culminating in an automated, capacity-driven framework that significantly improved resource allocation and delivery predictability.",
+                "Redesigned the system design interview process, creating a more engaging and human-centered experience, which resulted in the recruitment of high-caliber engineers who significantly contributed to critical infrastructure projects."
+            ],
+            "tags": [
+                "AI/ML",
+                "Large Language Models (LLMs)",
+                "Retrieval Augmented Generation (RAG)",
+                "Generative AI",
+                "gRPC",
+                "Protobufs",
+                "mTLS",
+                "Node.js",
+                "Python",
+                "RxJS",
+                "Event-Driven Architecture",
+                "System Architecture",
+                "Microservices",
+                "Agile Methodologies",
+                "Test Automation",
+                "Engineering Leadership",
+                "AWS",
+                "Redis",
+                "Apache Kafka",
+                "Fastify"
             ]
         },
         {
-            title: 'Staff Fullstack Engineer & Tech Lead - Marketplace',
-            company: 'Auth0',
-            period: 'Oct 2020 - Dec 2023',
-            description: 'Led transformation of Auth0\'s extensibility model by introducing a Marketplace ecosystem that replaced disparate solutions with a partner-driven model.',
-            achievements: [
-                'Grew integrations catalog from ~20 to hundreds of integrations',
-                'Designed scalable API-first architecture using Golang and Node.js',
-                'Pioneered introduction of templates to accelerate partner adoption',
-                'Architected support for open-source repositories enabling partner flexibility',
-                'Recruited and mentored over a dozen engineers for flagship Auth0 initiatives'
+            "title": "Staff Fullstack Engineer & Tech Lead - Marketplace",
+            "company": "Auth0",
+            "period": "October 2020 - December 2023",
+            "description": "Led the strategic overhaul of Auth0's extensibility model, conceptualizing and delivering a highly successful Marketplace ecosystem. Drove significant expansion of the integrations catalog and influenced architectural shifts that opened new business opportunities.",
+            "achievements": [
+                "Led the transformation of Auth0’s extensibility model by introducing a **Marketplace ecosystem**, effectively replacing disparate extensibility solutions with a centralized, partner-driven hub that significantly improved partner and customer adoption.",
+                "Drove a substantial expansion of the integrations catalog, scaling from approximately 20 to hundreds of integrations, and strategically influenced multiple teams and technical investments that shaped Auth0’s long-term extensibility and growth strategy.",
+                "Designed and implemented a scalable **API-first architecture** for managing Marketplace entities (partners, integrations, actions, and listings), leveraging **Golang** and **Node.js**.",
+                "Pioneered the introduction of 'templates'—a comprehensive catalog of pre-built recipes designed to accelerate partner adoption of Action integrations within authentication flows.",
+                "Architected robust support for **open-source repositories**, empowering partners to develop and maintain integrations with enhanced flexibility and transparency.",
+                "Influenced broader architectural shifts, leading to cross-functional investments in the Actions/Webtask runtime, which unlocked new business opportunities such as Flexible User Journeys (e.g., integrating driver’s license verification into authentication flows).",
+                "Recruited and mentored over a dozen engineers, many of whom became critical contributors to flagship Auth0 initiatives and continue to drive innovation within the company, championing diverse hiring efforts to build a strong, sustainable engineering team."
+            ],
+            "tags": [
+                "Fullstack Development",
+                "API Design",
+                "Golang",
+                "Node.js",
+                "Microservices",
+                "System Architecture",
+                "React",
+                "MongoDB",
+                "gRPC",
+                "Apache Kafka",
+                "PostgreSQL",
+                "Fastify",
+                "Cross-functional Team Leadership",
+                "Product Strategy"
             ]
         },
         {
-            title: 'Staff Engineer & Tech Lead',
-            company: 'RetailMeNot',
-            period: 'May 2018 - Oct 2020',
-            description: 'Led replatforming of RxSaver to RetailMeNot\'s first isomorphic React site with GraphQL API, utilizing Kubernetes and Google Cloud.',
-            achievements: [
-                'Migrated legacy system to modern isomorphic React site on GCP with GraphQL API',
-                'Designed and implemented Kubernetes infrastructure for enhanced scalability',
-                'Integrated best-in-class tech stack including Akamai, Algolia, LaunchDarkly, and Segment',
-                'Led RMN design system team delivering React UI library with reusable components',
-                'Modernized QA organization from traditional QA to test engineering focus'
+            "title": "Staff Engineer & Tech Lead",
+            "company": "RetailMeNot",
+            "period": "May 2018 - October 2020",
+            "description": "Led the replatforming of a critical product to a modern, isomorphic React application with a GraphQL API, leveraging cloud-native infrastructure. Spearheaded key initiatives in design systems, engineering mentorship, and quality assurance modernization.",
+            "achievements": [
+                "Led the re-architecture of RxSaver's platform, successfully migrating from a legacy system to a modern **isomorphic React site** on **Google Cloud Platform (GCP)** with a **GraphQL API**. This foundational shift enabled granular data collection and robust user journey mapping, yielding critical insights for significant user growth and improved business metrics.",
+                "Designed and implemented **Kubernetes infrastructure** to seamlessly migrate and enhance the scalability of services, streamlining operations and providing the agility necessary for rapid product iteration.",
+                "Integrated and optimized a best-in-class technology stack including **Akamai**, **Algolia**, **LaunchDarkly**, **Segment**, **Optimizely**, and **GitLab**, facilitating data-driven decision-making, A/B testing, and personalized user experiences, thereby driving higher user engagement and conversion rates.",
+                "Transitioned to lead the RetailMeNot design system team, delivering a comprehensive **React UI library** with reusable components that unified the design and development workflow across all web properties.",
+                "Resolved complex challenges in cross-functional collaboration by effectively aligning engineering and design teams on shared goals, significantly improving efficiency and product consistency.",
+                "Developed a structured growth curriculum and provided technical guidance and regular progress reviews, effectively mentoring mid- and junior-level engineers to foster their skill development.",
+                "Drove the evolution of the QA organization by defining and implementing a technical strategy that successfully shifted from traditional QA practices to a modern **test engineering** focus."
+            ],
+            "tags": [
+                "React",
+                "Next.js",
+                "GraphQL",
+                "Kubernetes",
+                "Google Cloud Platform (GCP)",
+                "Isomorphic Applications",
+                "Design Systems",
+                "System Architecture",
+                "Test Automation",
+                "Node.js",
+                "Engineering Leadership",
+                "Agile Project Management",
+                "CI/CD"
             ]
         },
         {
-            title: 'Staff UI Engineer',
-            company: 'SailPoint',
-            period: 'May 2017 - Apr 2018',
-            description: 'Worked on IdentityAI product leveraging artificial intelligence to analyze identity data and provide contextual insights for identity governance.',
-            achievements: [
-                'Developed AI-powered solution for ingesting large amounts of identity data',
-                'Implemented machine learning techniques for anomalous behavior identification',
-                'Built contextual insights platform for supercharged identity governance',
-                'Enabled customers to focus governance controls on higher risk components'
+            "title": "Staff UI Engineer",
+            "company": "SailPoint",
+            "period": "May 2017 - April 2018",
+            "description": "Contributed as a Staff UI Engineer to IdentityAI, a cutting-edge product leveraging Artificial Intelligence and Machine Learning to provide contextual insights for identity governance, focusing on suspicious and anomalous behavior detection.",
+            "achievements": [
+                "Developed and optimized user interfaces for **IdentityAI**, a solution leveraging **Artificial Intelligence** and **Machine Learning** to ingest and analyze large volumes of identity data and real-time activity for contextual insights.",
+                "Collaborated with cross-functional teams to integrate UI components with backend systems designed to identify suspicious or anomalous behaviors in user access.",
+                "Applied modern front-end development practices to create intuitive visualizations of risk associated with user access, enabling customers to focus governance controls effectively."
+            ],
+            "tags": [
+                "UI Engineering",
+                "Artificial Intelligence (AI)",
+                "Machine Learning",
+                "Angular",
+                "System Architecture",
+                "Cross-functional Team Leadership",
+                "Agile Project Management",
+                "AWS",
+                "Flink"
             ]
         },
         {
-            title: 'Sr. Engineer & Team Lead',
-            company: 'Bullhorn',
-            period: 'Oct 2015 - May 2017',
-            description: 'Led front-end architecture of greenfield application from whiteboard to production, defining full CI pipeline for automated software delivery.',
-            achievements: [
-                'Architected greenfield application with comprehensive CI/CD pipeline',
-                'Trained teams on performance, TDD, TypeScript, ES2015, Webpack, and Angular',
-                'Primary owner of organization\'s most widely adopted open source web app',
-                'Delivered multiple tech talks as evangelist for front-end open source projects'
+            "title": "Sr. Engineer & Team Lead",
+            "company": "Bullhorn",
+            "period": "October 2015 - May 2017",
+            "description": "Led the front-end architecture for a greenfield application, from conception to production. Established a robust CI pipeline, emphasized automated qualitative analysis, and provided extensive training on contemporary web technologies.",
+            "achievements": [
+                "Led the front-end architecture and development of a greenfield application, guiding it from initial whiteboarding through to successful production deployment.",
+                "Defined and implemented a comprehensive **Continuous Integration (CI)** pipeline to automate software delivery, with a strong focus on automated qualitative analysis for high code quality.",
+                "Provided extensive training to senior and entry-level teams on a wide array of contemporary front-end topics including **performance optimization**, **Test-Driven Development (TDD)**, **TypeScript**, **ES2015+**, **Webpack**, and **Angular (AOT)**.",
+                "Served as the primary owner of the organization’s most widely adopted open-source web application and conceptualized an internationalization (i18n) framework for Angular, contributing significantly to open-source initiatives.",
+                "Delivered multiple technical talks as an evangelist for front-end open-source projects, and was a presenter at Engage 2016 in Boston."
+            ],
+            "tags": [
+                "Front-end Architecture",
+                "Continuous Integration (CI)",
+                "Automated Testing",
+                "TypeScript",
+                "ES2015+",
+                "Webpack",
+                "Angular",
+                "Redux.js",
+                "AWS",
+                "Apache Kafka",
+                "Open Source",
+                "Technical Training"
             ]
         },
         {
-            title: 'Senior Fullstack Engineer & Team Lead',
-            company: 'Crescendo Content Marketing',
-            period: 'Jul 2015 - Oct 2015',
-            description: 'Led transition from monolithic Java application to microservices-based architecture using Node.js and Angular.',
-            achievements: [
-                'Applied strangle pattern to iteratively migrate functionality reducing risks',
-                'Implemented DynamoDB for scalable, high-performance data management',
-                'Designed Jenkins-based CI/CD pipelines for automated deployments',
-                'Developed internal training program for onboarding junior engineers from UMass'
+            "title": "Senior Fullstack Engineer & Team Lead",
+            "company": "Crescendo Content Marketing (Formerly Percussion Software)",
+            "period": "July 2015 - October 2015",
+            "description": "Spearheaded the transition from a monolithic Java application to a modern microservices architecture using Node.js and Angular, implementing iterative migration strategies and robust CI/CD pipelines.",
+            "achievements": [
+                "Led the critical transition from a monolithic Java application with JSP web views to a scalable **microservices-based architecture** utilizing **Node.js** and **Angular**.",
+                "Applied the **strangler pattern** to iteratively migrate functionality, significantly reducing risks and ensuring continuous business operations during the transition.",
+                "Implemented **Amazon DynamoDB** for scalable, high-performance data management across the new microservices architecture.",
+                "Designed and deployed **Jenkins-based CI/CD pipelines**, enabling fully automated builds, testing, and deployments, which dramatically improved development velocity.",
+                "Ensured all new microservices were highly scalable, comprehensively unit tested, and end-to-end tested for robust quality assurance.",
+                "Introduced and defined methodologies to maximize team velocity, fostering iterative delivery and continuous feedback loops.",
+                "Developed and delivered an internal training program to onboard and train junior engineers, establishing a scalable talent pipeline.",
+                "Acted as a hands-on mentor and technical leader, ensuring strict adherence to best practices in **Agile software development**.",
+                "Created high-fidelity prototypes, motion graphics, and design compositions to enhance communication and alignment between business stakeholders and engineering teams, facilitating faster iteration cycles.",
+                "Delivered a scalable and flexible platform that enabled accelerated deployment of new features, reducing time-to-market and modernizing the technology stack to adapt to evolving market demands."
+            ],
+            "tags": [
+                "Fullstack Development",
+                "Microservices",
+                "Node.js",
+                "Angular",
+                "Strangler Pattern",
+                "Amazon DynamoDB",
+                "Jenkins",
+                "CI/CD",
+                "Agile Development",
+                "Test Automation",
+                "Engineering Leadership",
+                "AWS"
+            ]
+        },
+        {
+            "title": "Senior Software Engineer & UXA",
+            "company": "Percussion Software",
+            "period": "October 2014 - July 2015",
+            "description": "Defined new front-end architecture and evolved the codebase to be automated, scalable, and thoroughly tested. Implemented strategies for peak team velocity and developed internal talent.",
+            "achievements": [
+                "Led the front-end team in defining a new architecture and evolving the existing codebase to be fully automated, highly scalable, and comprehensively unit and end-to-end tested.",
+                "Incorporated and defined new methodologies for achieving and sustaining peak team velocity.",
+                "Devised and implemented an internal training program for collegiate talent development, fostering growth within the engineering team.",
+                "Produced high and low-fidelity motion graphics, prototypes, and compositions to significantly improve design communication between business and engineering stakeholders.",
+                "Provided hands-on support to the engineering team as both an individual contributor and a mentor."
+            ],
+            "tags": [
+                "Front-end Architecture",
+                "Scalability",
+                "Test Automation",
+                "Team Velocity Optimization",
+                "UX/UI Design",
+                "Mentorship",
+                "Agile Methodologies"
+            ]
+        },
+        {
+            "title": "Engineer & UXA",
+            "company": "Patterson Companies, Inc.",
+            "period": "April 2014 - October 2014",
+            "description": "Led front-end development for a cloud-based enterprise application, actively exploring and integrating emerging web technologies and methodologies to enhance productivity. Championed knowledge transfer and UX process improvements.",
+            "achievements": [
+                "Led the front-end development for a cloud-based, enterprise application, actively incorporating new and evolving web technologies to enhance functionality and user experience.",
+                "Enthusiastically explored and implemented relevant new technologies and methodologies to significantly improve team productivity and efficiency.",
+                "Hosted multiple knowledge transfer sessions and technical talks to increase overall team proficiency in cutting-edge web development practices.",
+                "Developed and managed an internal UX process to streamline the production pipeline and improve the quality of user experiences."
+            ],
+            "tags": [
+                "Front-end Development",
+                "Cloud Applications",
+                "Enterprise Software",
+                "JavaScript",
+                "Node.js",
+                "TypeScript",
+                "Angular",
+                "Test Automation",
+                "Project Management",
+                "UX Process",
+                "Knowledge Transfer"
+            ]
+        },
+        {
+            "title": "Interface Developer",
+            "company": "Aspect Software",
+            "period": "November 2012 - February 2014",
+            "description": "Architected, developed, and distributed comprehensive, cross-platform interactive solutions. Implemented new internal processes to boost team efficiency and collaboration, while exploring and integrating emerging technologies.",
+            "achievements": [
+                "Architected, developed, and delivered comprehensive, cross-platform interactive strategies and solutions.",
+                "Developed and implemented new internal processes that significantly improved team efficiency, increased collaboration, and led to higher quality deliverables.",
+                "Actively explored and integrated emerging technologies into the development workflow to maintain a competitive edge.",
+                "Provided technical training and guidance to team members, fostering skill development and knowledge sharing."
+            ],
+            "tags": [
+                "Interface Development",
+                "Cross-platform Solutions",
+                "JavaScript",
+                "Node.js",
+                "Angular",
+                "Bootstrap",
+                "SASS",
+                "Process Improvement",
+                "Technical Training"
             ]
         }
     ];
@@ -127,7 +313,22 @@ function App() {
             title: 'RxSaver Isomorphic Platform',
             tech: 'React, GraphQL, Kubernetes, GCP',
             description: 'Modern isomorphic React site with GraphQL API, enabling granular data collection and user journey mapping.'
-        }
+        },
+        {
+            title: 'Fuse Dental Practice Management Software',
+            tech: 'Angular, Azure, C#, .NET',
+            description: 'Modern cloud-based dental practice management software enabling efficient patient management and billing.'
+        },
+        {
+            title: 'Enterprise After Hours',
+            tech: 'Angular, Java',
+            description: 'A partnership with Enterprise Holdings and Progressive Insurance to build a comprehensive after-hours car rental management system for after hours collisions.'
+        },
+        {
+            title: 'Winchester Ballistics Calculator',
+            tech: 'Angular, Ionic',
+            description: 'A comprehensive ballistics calculator for Winchester ammunition, providing detailed trajectory and performance data.'
+        },
     ];
 
     return (
@@ -199,7 +400,9 @@ function App() {
                                           {exp.achievements.map((achievement, i) => (
                                               <li key={i} className="text-gray-300 flex items-start gap-2">
                                                   <span className="text-green-400 mt-1">•</span>
-                                                  {achievement}
+                                                  <MarkdownToJSX>
+                                                      {achievement}
+                                                  </MarkdownToJSX>
                                               </li>
                                           ))}
                                       </ul>
