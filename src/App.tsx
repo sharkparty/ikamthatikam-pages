@@ -85,7 +85,7 @@ function App() {
             ]
         },
         {
-            "title": "Staff Fullstack Engineer & Tech Lead - Marketplace",
+            "title": "Staff Engineer & Tech Lead - Marketplace",
             "company": "Auth0",
             "period": "October 2020 - December 2023",
             "description": "Led the strategic overhaul of Auth0's extensibility model, conceptualizing and delivering a highly successful Marketplace ecosystem. Drove significant expansion of the integrations catalog and influenced architectural shifts that opened new business opportunities.",
